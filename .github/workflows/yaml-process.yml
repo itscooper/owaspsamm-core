@@ -73,7 +73,7 @@ jobs:
       - name: Trigger Website Dispatch
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REMOTE_TOKEN }}
           repository: itscooper/website
           event-type: samm-core-released
           client-payload: '{"release": "${{ github.ref_name }}"}'
