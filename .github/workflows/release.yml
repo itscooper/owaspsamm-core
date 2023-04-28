@@ -1,5 +1,6 @@
 name: Release
 on:
+  # When closing (merging) pull requests into main
   pull_request:
     branches:
       - main
