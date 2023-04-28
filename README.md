@@ -8,5 +8,5 @@ Welcome to the [OWASP SAMM](https://owaspsamm.org/) core model repository! Here 
 
 If you're not familiar with OWASP SAMM, the best place to start is the project [homepage](https://owaspsamm.org/).
 
-  
-CHanges
+
+ Wop wop
