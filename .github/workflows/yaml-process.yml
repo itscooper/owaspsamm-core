@@ -65,15 +65,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SQUASH_HISTORY: true
   # after changing something, we need to trigger the website build
-  #trigger-website-build:
-  #  if: github.event.push.tags && github.ref_type == 'tag'
-  #  runs-on: ubuntu-latest
-  #  needs: generate-markdown
-  #  steps:
-  #    - name: Trigger Website Dispatch
-  #      uses: peter-evans/repository-dispatch@v2
-  #      with:
-  #        token: ${{ secrets.GITHUB_TOKEN }}
-  #        repository: owaspsamm/website
-  #        event-type: samm-core-released
-  #        client-payload: '{"release": "${{ github.ref_name }}"}'
+  trigger-website-build:
+    if: github.event.push.tags && github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    needs: generate-markdown
+    steps:
+      - name: Trigger Website Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: itscooper/website
+          event-type: samm-core-released
+          client-payload: '{"release": "${{ github.ref_name }}"}'
